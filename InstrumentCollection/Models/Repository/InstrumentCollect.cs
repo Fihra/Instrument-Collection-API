@@ -23,7 +23,10 @@ namespace InstrumentCollection.Models.Repository
         public List<Instrument> SelectAll()
         {
             var query = Collection.Find(new BsonDocument()).ToList();
+
             return query;
+            //var output = query.ToJson();
+            //return output;
         }
 
         public void InsertInstrument(Instrument instrument)
