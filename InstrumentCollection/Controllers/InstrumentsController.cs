@@ -14,6 +14,8 @@ using System.Web.Mvc;
 using HttpPostAttribute = System.Web.Mvc.HttpPostAttribute;
 using HttpGetAttribute = System.Web.Http.HttpGetAttribute;
 using RouteAttribute = System.Web.Http.RouteAttribute;
+using System.Xml;
+using Newtonsoft.Json;
 
 namespace InstrumentCollection.Controllers
 {
@@ -32,10 +34,11 @@ namespace InstrumentCollection.Controllers
         //    return _instruments.SelectAll();
         //}
 
-        [Route("instruments/all")]
+        [Route("api/instruments/all")]
         [HttpGet]
-        public IEnumerable<Instrument> All()
+        public List<Instrument> All()
         {
+
             return _instruments.SelectAll();
         }
 

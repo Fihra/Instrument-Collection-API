@@ -6,6 +6,7 @@ using System.Web.Http.Results;
 using System.Web.Mvc;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using Newtonsoft.Json;
 
 namespace InstrumentCollection.Models.Repository
 {
