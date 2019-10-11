@@ -35,6 +35,25 @@ namespace InstrumentCollection.Models.Repository
             Collection.InsertOne(instrument);
         }
 
+        //public Book Get(string id) =>
+        //_books.Find<Book>(book => book.Id == id).FirstOrDefault();
+
+        public Instrument Get(string id)
+        {
+            //var query = Collection.Find<Instrument>(i => i.Id == id);
+            //return query;
+
+            //var filter_id = Builders<MODEL_NAME>.Filter.Eq("id", ObjectId.Parse("50ed4e7d5baffd13a44d0153"));
+            //var entity = dbCollection.Find(filter).FirstOrDefault();
+            //return entity.ToString();
+            var filter = Builders<Instrument>.Filter.Eq("Id", id);
+            var query = Collection.Find(filter).FirstOrDefault();
+            return query;
+            
+
+            //return result;
+        }
+
         //var collection = _database.GetCollection<BsonDocument>("test");
 
         //var result = await collection.Find(new BsonDocument())

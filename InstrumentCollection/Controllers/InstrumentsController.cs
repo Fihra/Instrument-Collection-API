@@ -42,6 +42,28 @@ namespace InstrumentCollection.Controllers
             return _instruments.SelectAll();
         }
 
+        [Route("api/instruments/{id}")]
+        [HttpGet]
+        public Instrument GetInstrument(string id)
+        {
+            var instrument = _instruments.Get(id);
+
+            if(instrument == null)
+            {
+                return null;
+            }
+
+            return instrument;
+        }
+
+        [Route("api/instruments/new")]
+        [HttpPost]
+        public Instrument Create(Instrument instrument)
+        {
+           _instruments.InsertInstrument(instrument);
+            return instrument;
+        }
+
         //public ActionResult Create()
         //{
         //    return View();
