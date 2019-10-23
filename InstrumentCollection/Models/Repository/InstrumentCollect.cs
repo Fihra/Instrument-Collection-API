@@ -49,9 +49,12 @@ namespace InstrumentCollection.Models.Repository
             var filter = Builders<Instrument>.Filter.Eq("Id", id);
             var query = Collection.Find(filter).FirstOrDefault();
             return query;
-            
 
-            //return result;
+        }
+
+        public void DeleteInstrument(string id)
+        {
+            Collection.DeleteOne(i => i.Id == id);
         }
 
         //var collection = _database.GetCollection<BsonDocument>("test");

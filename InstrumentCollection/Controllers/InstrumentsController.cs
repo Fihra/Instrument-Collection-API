@@ -64,6 +64,12 @@ namespace InstrumentCollection.Controllers
             return instrument;
         }
 
+        [Route("api/instruments/{id}/delete")]
+        [HttpPost]
+        public void Delete(string id)
+        {
+            _instruments.DeleteInstrument(id);
+        }
         //public ActionResult Create()
         //{
         //    return View();
